@@ -19,17 +19,17 @@
                 <div class="card-body">
                     <tbody>
                         <tr>
-                            <td>Full Name: {{patient.patientname}}</td>
+                            <td>Full Name: {{patient.first_name}}  {{patient.admin.last_name}}</td>
                             <br>
                             <td>Email: {{ patient.admin.email }}</td>
                             <br>
-                            <td>Age: {{ patient.age }}</td>
+                            <td>Date of Birth: {{ patient.dob }}</td>
                             <br>
                             <td>Gender: {{ patient.gender }}</td>
                             <br>
-                            <td>Address: {{ patient.adresss }}</td>
+                            <td>Address: {{ patient.address }}</td>
                             <br>
-                            <td>Tel: {{ patient.mobile }}</td>
+                            <td>Tel: {{ patient.phone_number }}</td>
 
                         </tr>
                     </tbody>
@@ -42,14 +42,14 @@
                     <i class="fa fa-align-justify"></i> Patient's Medical Info
                 </div>
                 <div class="card-body">
-                    <h6>Joined: </h6>
-                    <h6>Last Login: </h6>
+                    <h6>Joined: {{patient.date_admitted}} </h6>
+                    <h6>Last Login: {{patient.admin.last_login}}</h6>
 
                 </div>
             </div>
         </div>
 
-        <div class="col-lg-5">
+        {% comment %} <div class="col-lg-5">
             <div class="card">
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Patient's Personal Info
@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 
 
 </div>

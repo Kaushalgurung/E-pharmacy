@@ -1,5 +1,5 @@
  {% extends 'patient_templates/base_template.html'%} {% load crispy_forms_tags %} {% block page_title %}
-<h5>Add patient</h5>
+<h5>Give Feedback</h5>
 
 {% endblock page_title %} {% block main_content %}
 
@@ -88,19 +88,19 @@
 
                                         {% if feedback.feedback_reply == "" %}
 
-                                        <div class="message my-message">
-                                            <img alt="" class="img-circle medium-image" src="{{user.adminhod.profile_pic.url}}">
 
+                                        <div class="message my-message">
+                                            <img alt="" class="img-circle medium-image" src="{{feedback.pharmacist_id.profile_pic.url}}">
                                             <div class="message-body">
                                                 <div class="message-body-inner">
                                                     <div class="message-info">
-                                                        <h4> {{user.username}}</h4>
+                                                        <h4> Pharmacist</h4>
                                                         <h5> <i class="fa fa-clock-o"></i>{{feedback.created_at}}</h5>
                                                     </div>
                                                     <hr>
                                                     <div class="message-text">
 
-                                                        <b style="font-size:1.2rem" font-style="italic !important">  ```Waiting For Pharmacist to reply``
+                                                        <b style="color:blue;" font-style="italic !important">  ``Waiting For Pharmacist to reply...``
                                                             </b>
 
                                                     </div>
@@ -110,12 +110,12 @@
                                         </div>
                                         {% else %}
                                         <div class="message my-message">
-                                            <img alt="" class="img-circle medium-image" src="{{user.adminhod.profile_pic.url}}">
+                                            <img alt="" class="img-circle medium-image" src="{{feedback.emp_no.profile_pic.url}}">
 
                                             <div class="message-body">
                                                 <div class="message-body-inner">
                                                     <div class="message-info">
-                                                        <h4> {{user.username}}</h4>
+                                                        <h4> Pharmacist</h4>
                                                         <h5> <i class="fa fa-clock-o"></i>{{feedback.created_at}}</h5>
                                                     </div>
                                                     <hr>

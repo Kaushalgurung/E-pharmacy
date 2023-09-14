@@ -21,7 +21,7 @@ def patientHome(request):
 @login_required
 def patientProfile(request):
     customuser = CustomUser.objects.get(id=request.user.id)
-    patien = Patients.objects.get(admin=customuser.id)
+    patient = Patients.objects.get(admin=customuser.id)
    
     form=PatientPicForm1()
     if request.method == "POST":
@@ -39,19 +39,19 @@ def patientProfile(request):
         customuser.email=email
         
         customuser.save()
-        patien = Patients.objects.get(admin=customuser.id)
-        form=PatientPicForm1(request.POST,request.FILES,instance=patien)
+        patient = Patients.objects.get(admin=customuser.id)
+        form=PatientPicForm1(request.POST,request.FILES,instance=patient)
 
-        patien.address = address
+        patient.address = address
         if form.is_valid():
             form.save()
-        patien.save()
+        patient.save()
        
         messages.success(request, "Profile Updated Successfully")
         return redirect('patient_profile')
 
     context={
-        "patien":patien,
+        "patient":patient,
         "form":form
     }
       
